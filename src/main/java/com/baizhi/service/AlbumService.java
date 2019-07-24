@@ -1,0 +1,71 @@
+package com.baizhi.service;
+
+import com.baizhi.entity.Album;
+import com.baizhi.entity.Banner;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.Map;
+
+/**
+ * 接口描述信息 (专辑业务)
+ *
+ * @author : buxiaoyu
+ * @date : 2019-07-22 12:07
+ * @version: V_1.0.0
+ */
+public interface AlbumService {
+    /**
+     * 方法描述: (查询所有专辑)
+     * @param page
+     * @param size
+     * @return java.util.Map<java.lang.String, java.lang.Object>
+     */
+
+    Map<String,Object> queryAll(Integer page, Integer size);
+
+    /**
+     * 方法描述: (根据Id 查询专辑)
+     * @param id
+     * @return java.lang.Integer
+     */
+
+    Album queryOne(String id);
+
+    /**
+     * 方法描述: (添加专辑)
+     * @param album
+     * @return java.util.Map<java.lang.String, java.lang.Object>
+     */
+    Integer add(Album album);
+
+    /**
+     * 方法描述: (修改专辑)
+     * @param album
+     * @return java.util.Map<java.lang.String, java.lang.Object>
+     */
+    Integer edit(Album album);
+
+    /**
+     * 方法描述: (删除专辑)
+     * @param album
+     * @return java.util.Map<java.lang.String, java.lang.Object>
+     */
+    Integer del(Album album);
+
+
+    /**
+     * 方法描述: (文件上传)
+     * @param id
+     * @param cover
+     * @param request
+     * @return java.util.Map<java.lang.String, java.lang.Object>
+     */
+
+    Integer upload(String id, MultipartFile cover, HttpServletRequest request) throws IOException;
+
+
+
+
+}
