@@ -150,7 +150,16 @@ public class ChapterServiceImpl extends BaseApiService implements ChapterService
 
     //当前切换到dev分支
 
-    //当前处于master分支
-
+//<<<<<<< HEAD
+//    //当前处于master分支
+//
+//=======
+//
+//    //当前处于dev分支
+//
+//    //再次在dev分支做了操作
+//
+//    //88888
+//>>>>>>> b231012e47fee5414afce9032eb6ad1ebbb32298
 
 }
