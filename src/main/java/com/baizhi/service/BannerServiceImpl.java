@@ -50,6 +50,8 @@ public class BannerServiceImpl extends BaseApiService implements BannerService {
         //总条数/总记录数
         int count = bannerDAO.selectCountByExample(example);
         //
+
+
         //总页数
         Integer total = count % size == 0 ? count / size : count / size + 1;
         return setResultSuccessDataByPage(banners, page, total, count);
