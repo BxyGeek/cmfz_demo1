@@ -1,7 +1,6 @@
 package com.baizhi.controller;
 
 import com.baizhi.api.BaseApiService;
-import com.baizhi.entity.Album;
 import com.baizhi.service.AlbumService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +21,11 @@ import java.util.Map;
 @Controller
 @RequestMapping("album")
 public class AlbumController extends BaseApiService {
+
+    //这是卜晓宇做的修改1
+    //这是卜晓宇做的修改2
+    //这是卜晓宇做的修改3
+
 
     @Autowired
     private AlbumService albumService;
