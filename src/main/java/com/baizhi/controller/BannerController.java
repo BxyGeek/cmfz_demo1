@@ -27,6 +27,10 @@ import java.util.Map;
 @RequestMapping("banner")
 public class BannerController extends BaseApiService {
 
+    //这是卜晓宇做的修改6
+    //这是卜晓宇做的修改7
+
+
     @Autowired
     private BannerService bannerService;
 
