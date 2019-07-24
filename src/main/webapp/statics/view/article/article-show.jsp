@@ -16,7 +16,7 @@
             {name : 'options',width : 50,align:'center',
                 formatter:function(cellvalue, options, row){
                     //return " <div class='btn btn-warning' onclick=\"openModal('edit','"+row.id+"')\">修改</div>    ";//<div class='btn btn-danger'>删除</a></div>
-                    return " <div class='btn btn-warning' onclick=\"openModal('edit','"+row.id+"')\">修改</div>    ";//<div class='btn btn-danger'>删除</a></div>
+                    return " <div class='btn btn-warning' onclick=\"openModal('edit','" + row.id + "')\">修改</div>  <div class='btn btn-danger'><a href='${app}/article/option?oper=del&id=" + row.id + "'>删除</a></div> ";
                 }
             }
         ],
@@ -115,6 +115,12 @@
                 //刷新表单
                 $('#article_table').trigger('reloadGrid');
             }
+            //    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5W8l/YVRWXxELbjHazGm/vsnHHqJ1Hg2OWsm5APLm1jsrqnjIOCMA/LO9Mq2PmMFD6LjwE2hRViwHigAgUKH/u1uuiwGFCWw9n3aes5BSDV/K5h8mbE+QmXLuclmbLkrsMspw/XafSvA2n6etEEVgPg+Q1QawJRyapNM3/lLV+Z4utyIKrJTZ5HjX55SXxhNhS7HqBr4Z0Unvt9Tk+xOzpVY1j/oA0r+yeaK33Z8amlfbQGz30siqmhZx2M5MqTaowyVUwPjUSTwYeceL4xkPBKPbcmZR2aMp9cG+UjpYJfCPcBzGKsJb3ICJokK7xX06eslFBIJ5+4ROBzMt7BvJ
+            //    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDixo8edjVrqrB/JoCL10R0/PbALb3t+eZKmIYZ1aoAmwlQKUCdnryJwGxtwse3MkSrZ7J1knNLLrpeIVnMreBY0nvOXG8RAe0KPmfx19+EeGit9E79XKOD4sxHw6Dvzi31oQhS6NHPld2kG7G1NeNp6rW41jRWVduSjxYPONHmH8BR/6FC7/79gD1WHKYGh9Gx2KL9jdcNmV3kSJJ9Wq8hv07trTcoI0LN1a3Z+fuKEvnOdxBchZZA8JUA+XzCIV17V1cZ8pPs++RMP8ENiSZv1A5sN7+pRiRVjLtuGXV2y9Dk7F8+6jhhUFlfnk5uMswPPKepAyDa/htUAWXgvl1L bxy@bxydeMacBook-Pro.local
+
+
+
+
         })
     }
 //打开模态框
