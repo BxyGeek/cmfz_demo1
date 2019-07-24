@@ -67,6 +67,8 @@ public class BannerServiceImpl extends BaseApiService implements BannerService {
         banner.setDeleteFlag(1);
         if (StringUtils.equals("", banner.getCover())) {
             log.info("未添加图片");
+
+
             banner.setCover("404.png");
         }
         //设置完成
