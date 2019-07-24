@@ -24,21 +24,8 @@ public class AlbumController extends BaseApiService {
 
     //这是卜晓宇做的修改1
     //这是卜晓宇做的修改2
-<<<<<<< HEAD
     //这是卜晓宇做的修改3
-    //这是卜晓宇做的修改3
-    //这是周旭做的修改3
-    //这是周旭做的修改3
-    //这是周旭做的修改3
 
-
-
-=======
->>>>>>> ba035bda74a572ab3150ce4c810a2cbc2d7f3a39
-
-
-    //这是卜晓宇做的修改3
-    //这是卜晓宇做的修改4
 
     @Autowired
     private AlbumService albumService;
