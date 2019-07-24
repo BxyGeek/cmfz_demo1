@@ -23,15 +23,8 @@ import java.util.Map;
 @Controller
 @RequestMapping("admin")
 public class AdminController {
-    //这是周旭修改的代码1
-    //这是周旭修改的代码2
-    //这是周旭修改的代码3
 
-
-    //这是周旭修改的代码4
-    //这是周旭修改的代码5
     
-
     @Autowired
     private AdminService adminService;
 
