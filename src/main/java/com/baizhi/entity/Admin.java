@@ -25,4 +25,6 @@ public class Admin implements Serializable {
     @Id
     private String adminName;
     private String password;
+    private String salt;
+    //AuthenticationException
 }

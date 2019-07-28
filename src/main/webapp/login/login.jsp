@@ -33,7 +33,8 @@
         $(function () {
             $("#loginButtonId").click(function () {
                 $.ajax({
-                    url: "${app}/admin/login",
+                    <%--url: "${app}/admin/login",--%>
+                    url: "${app}/shiroAdmin/login",
                     type: "POST",
                     data: $("#loginForm").serialize(),
                     dataType: "json",
@@ -79,7 +80,8 @@
                         </div>
                     </div>
                     <div class="form-bottom" style="width: 450px">
-                        <form role="form" action="${app}/admin/login" method="post"
+
+                        <form role="form" action="${app}/shiroAdmin/login" method="post"
                               class="login-form" id="loginForm">
                             <font style="color: red">${requestScope.msg}</font>
                             <span id="msgDiv"></span>
@@ -110,7 +112,7 @@
 
 </div>
 
-
 </body>
 
 </html>
+<%--<form role="form" action="${app}/admin/login" method="post"--%>

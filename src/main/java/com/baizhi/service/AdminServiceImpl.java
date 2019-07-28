@@ -58,4 +58,13 @@ public class AdminServiceImpl extends BaseApiService implements AdminService {
             return setResultError("系统错误，请稍后再试");
         }
     }
+
+    @Override
+    public Admin queryAdminByUsername(String username) {
+        Admin admin = new Admin();
+        admin.setAdminName(username);
+        Admin one = adminDAO.selectOne(admin);
+        System.out.println("从数据库查询出的管理员对象：         "+one);
+        return  one;
+    }
 }
