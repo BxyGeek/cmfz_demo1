@@ -1,46 +1,47 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="app" value="${pageContext.request.contextPath}"></c:set>
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>持明法洲登陆</title>
     <!-- CSS -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/form-elements.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" href="statics/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-    <script src="assets/js/jquery-2.2.1.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.backstretch.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
-    <script src="assets/js/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="${app}/login/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${app}/login/assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${app}/login/assets/css/form-elements.css">
+    <link rel="stylesheet" href="${app}/login/assets/css/style.css">
+    <link rel="shortcut icon" href="${app}/statics/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${app}/login/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${app}/login/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${app}/login/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="${app}/login/assets/ico/apple-touch-icon-57-precomposed.png">
+    <script src="${app}/login/assets/js/jquery-2.2.1.min.js"></script>
+    <script src="${app}/login/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="${app}/login/assets/js/jquery.backstretch.min.js"></script>
+    <script src="${app}/login/assets/js/scripts.js"></script>
+    <script src="${app}/login/assets/js/jquery.validate.min.js"></script>
     <script>
 
         $(function () {
             $("#captchaImage").click(function () {
-                $("#captchaImage").prop("src", "${pageContext.request.contextPath}/code/getCode?time=" + new Date().getTime());
+                $("#captchaImage").prop("src", "${app}/code/getCode?time=" + new Date().getTime());
             });
         });
 
         $(function () {
             $("#loginButtonId").click(function () {
                 $.ajax({
-                    url: "${pageContext.request.contextPath}/admin/login",
+                    url: "${app}/admin/login",
                     type: "POST",
                     data: $("#loginForm").serialize(),
                     dataType: "json",
                     success: function (data) {
                         if (data.code == 200){
-                            location.href = "${pageContext.request.contextPath}/index.jsp"
+                            location.href = "${app}/index.jsp"
                         }else {
-                            location.href = "${pageContext.request.contextPath}/login/login.jsp"
+                            location.href = "${app}/login/login.jsp"
                         }
                     }
                 })
@@ -78,7 +79,7 @@
                         </div>
                     </div>
                     <div class="form-bottom" style="width: 450px">
-                        <form role="form" action="${pageContext.request.contextPath}/admin/login" method="post"
+                        <form role="form" action="${app}/admin/login" method="post"
                               class="login-form" id="loginForm">
                             <font style="color: red">${requestScope.msg}</font>
                             <span id="msgDiv"></span>
@@ -94,7 +95,7 @@
                             </div>
                             <div class="form-group">
                                 <img id="captchaImage" style="height: 48px" class="captchaImage"
-                                     src="${pageContext.request.contextPath}/code/getCode">
+                                     src="${app}/code/getCode">
                                 <input style="width: 289px;height: 50px;border:3px solid #ddd;border-radius: 4px;"
                                        type="test" name="enCode" id="form-code" required>
                             </div>

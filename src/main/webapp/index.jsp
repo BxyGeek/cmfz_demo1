@@ -67,7 +67,7 @@
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body text-center">
-                        <a href="javascript:$('#contentLayout').load('${app}/statics/view/banner/banner-show.jsp')" class="btn btn-default">查询轮播图</a>
+                        <a href="javascript:$('#contentLayout').load('${app}/templates/view/banner/banner-show.jsp')" class="btn btn-default">查询轮播图</a>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body text-center">
-                        <a href="javascript:$('#contentLayout').load('${app}/statics/view/album/album-show.jsp')" class="btn btn-default">查询专辑</a>
+                        <a href="javascript:$('#contentLayout').load('${app}/templates/view/album/album-show.jsp')" class="btn btn-default">查询专辑</a>
                     </div>
                 </div>
             </div>
@@ -95,7 +95,7 @@
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                     <div class="panel-body text-center">
-                        <a href="javascript:$('#contentLayout').load('${app}/statics/view/article/article-show.jsp')" class="btn btn-default">查询文章</a>
+                        <a href="javascript:$('#contentLayout').load('${app}/templates/view/article/article-show.jsp')" class="btn btn-default">查询文章</a>
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                 </div>
                 <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                     <div class="panel-body text-center">
-                        <a href="javascript:$('#contentLayout').load('${app}/statics/view/user/user-show.jsp')" class="btn btn-default">查询用户</a>
+                        <a href="javascript:$('#contentLayout').load('${app}/templates/view/user/user-show.jsp')" class="btn btn-default">查询用户</a>
                     </div>
                 </div>
             </div>
