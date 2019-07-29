@@ -60,10 +60,9 @@ public class ShiroController extends BaseApiService {
     }
 
     @RequestMapping("logout")
-    @ResponseBody
-    public Map<String,Object> logout() {
+    public String logout() {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
-        return setResultSuccess();
+        return "/login/login";
     }
 }

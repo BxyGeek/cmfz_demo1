@@ -50,10 +50,10 @@
             <%--<li><a>您好：${admin.adminName}</a></li>--%>
                 <shiro:authenticated>
                     <li><a>您好：<font style="color: #9acfea"><shiro:principal></shiro:principal></font></a></li>
-                    <li><a href="${app}/admin/exit">安全退出</a></li>
+                    <li><a href="${app}/shiroAdmin/logout">安全退出</a></li>
                 </shiro:authenticated>
                 <shiro:notAuthenticated>
-                    <li><a><font style="color: #9acfea" href="${app}/shiroAdmin/logout"><shiro:principal></shiro:principal>登陆</font></a></li>
+                    <li><a href="${app}/login/login.jsp"><font style="color: #9acfea">登陆</font></a></li>
                 </shiro:notAuthenticated>
             </ul>
         </div>
@@ -78,6 +78,42 @@
                     </div>
                 </div>
             </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFour">
+                    <h4 class="panel-title text-center">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <h4>用户管理</h4>
+                        </a>
+                    </h4>
+                </div>
+
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <%--<shiro:hasRole name="super">--%>
+                    <div class="panel-body text-center">
+                        <%--添加权限--%>
+                        <shiro:hasAnyRoles name="admin,super">
+                            <shiro:hasPermission name="user:add">
+                                <a href="javascript:$('#contentLayout').load('${app}/templates/view/user/user-show.jsp')" class="btn btn-default">添加用户</a><br/><br/>
+                            </shiro:hasPermission>
+                                <%--修改权限--%>
+                            <shiro:hasPermission name="user:update">
+                                <a href="javascript:$('#contentLayout').load('${app}/templates/view/user/user-show.jsp')" class="btn btn-default">修改用户</a><br/><br/>
+                            </shiro:hasPermission>
+                                <%--删除权限--%>
+                            <shiro:hasPermission name="user:delete">
+                                <a href="javascript:$('#contentLayout').load('${app}/templates/view/user/user-show.jsp')" class="btn btn-default">删除用户</a><br/><br/>
+                            </shiro:hasPermission>
+                                <%--查询权限--%>
+                            <shiro:hasPermission name="user:query">
+                                <a href="javascript:$('#contentLayout').load('${app}/templates/view/user/user-show.jsp')" class="btn btn-default">查询用户</a><br/><br/>
+                            </shiro:hasPermission>
+                        </shiro:hasAnyRoles>
+                    </div>
+                    <%--</shiro:hasRole>--%>
+
+                </div>
+            </div>
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingTwo">
                     <h4 class="panel-title text-center">
@@ -92,6 +128,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingThree">
                     <h4 class="panel-title text-center">
@@ -106,20 +143,42 @@
                     </div>
                 </div>
             </div>
+        <shiro:hasRole name="super">
             <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingFour">
+                <div class="panel-heading" role="tab" id="headingFive">
                     <h4 class="panel-title text-center">
-                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            <h4>用户管理</h4>
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+                            <h4>管理员管理</h4>
                         </a>
                     </h4>
                 </div>
-                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                    <%--<shiro:hasRole name="super">--%>
                     <div class="panel-body text-center">
-                        <a href="javascript:$('#contentLayout').load('${app}/templates/view/user/user-show.jsp')" class="btn btn-default">查询用户</a>
+
+                        <%--管理员权限--%>
+                        <shiro:hasPermission name="admin:add">
+                            <a href="javascript:$('#contentLayout').load('${app}/templates/view/user/user-show.jsp')" class="btn btn-default">添加管理员</a><br/><br/>
+                        </shiro:hasPermission>
+                        <%--删除--%>
+                        <shiro:hasPermission name="admin:delete">
+                            <a href="javascript:$('#contentLayout').load('${app}/templates/view/user/user-show.jsp')" class="btn btn-default">删除管理员</a><br/><br/>
+                        </shiro:hasPermission>
+                        <%--修改--%>
+                        <shiro:hasPermission name="admin:update">
+                            <a href="javascript:$('#contentLayout').load('${app}/templates/view/user/user-show.jsp')" class="btn btn-default">修改管理员</a><br/><br/>
+                        </shiro:hasPermission>
+                        <%--添加--%>
+                        <shiro:hasPermission name="admin:query">
+                            <a href="javascript:$('#contentLayout').load('${app}/templates/view/user/user-show.jsp')" class="btn btn-default">查询管理员</a><br/>
+                        </shiro:hasPermission>
+
                     </div>
                 </div>
             </div>
+        </shiro:hasRole>
+
+
         </div>
     </div>
 

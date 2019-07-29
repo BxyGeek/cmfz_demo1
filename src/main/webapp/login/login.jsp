@@ -93,7 +93,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="form-password">Password</label>
-                                <input type="password" name="password" placeholder="请输入密码..."
+                                <input type="text" name="password" placeholder="请输入密码..."
                                        minlength="2" class="form-password form-control" id="form-password" required>
                             </div>
                             <div class="form-group">

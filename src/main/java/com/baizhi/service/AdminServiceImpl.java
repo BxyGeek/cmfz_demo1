@@ -64,7 +64,7 @@ public class AdminServiceImpl extends BaseApiService implements AdminService {
         Admin admin = new Admin();
         admin.setAdminName(username);
         Admin one = adminDAO.selectOne(admin);
-        System.out.println("从数据库查询出的管理员对象：         "+one);
+        log.info("从数据库查询出的管理员对象：         "+one);
         return  one;
     }
 }

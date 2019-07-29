@@ -3,6 +3,8 @@ package com.baizhi.shiro.conf;
 import com.baizhi.shiro.realm.MyRealm;
 import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
+import org.apache.shiro.cache.CacheManager;
+import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -47,10 +49,13 @@ public class ShiroFilterConf {
     }
 
     @Bean
-    public SecurityManager getSecurityManager(Realm realm){
+    public SecurityManager getSecurityManager(Realm realm,CacheManager cacheManager){
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
 //        MyRealm myRealm = new MyRealm();
 //        securityManager.setRealm(myRealm);
+//        CacheManager cacheManager = new EhCacheManager();
+//        设置缓存
+        securityManager.setCacheManager(cacheManager);
         securityManager.setRealm(realm);
         return securityManager;
     }
@@ -73,6 +78,10 @@ public class ShiroFilterConf {
         return credentialsMatcher;
     }
 
+    @Bean
+    public CacheManager getCacheManager(){
+        return new EhCacheManager();
+    }
 
 
 
