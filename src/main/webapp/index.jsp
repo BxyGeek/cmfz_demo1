@@ -1,5 +1,6 @@
 <%@page contentType="text/html; UTF-8" isELIgnored="false" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <c:set var="app" value="${pageContext.request.contextPath}"></c:set>
 <!doctype html>
 <html lang="en">
@@ -46,7 +47,8 @@
 
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a>您好：${admin.adminName}</a></li>
+                <%--<li><a>您好：${admin.adminName}</a></li>--%>
+                <li><a>您好：<font style="color: #9acfea"><shiro:principal></shiro:principal></font></a></li>
                 <li><a href="${app}/admin/exit">安全退出</a></li>
             </ul>
         </div>

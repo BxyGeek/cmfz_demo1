@@ -42,7 +42,8 @@
                         if (data.code == 200){
                             location.href = "${app}/index.jsp"
                         }else {
-                            location.href = "${app}/login/login.jsp"
+                            //location.href = "$ {app}/login/login.jsp"
+                            $("#msgDiv").html(data.msg);
                         }
                     }
                 })
@@ -83,8 +84,8 @@
 
                         <form role="form" action="${app}/shiroAdmin/login" method="post"
                               class="login-form" id="loginForm">
-                            <font style="color: red">${requestScope.msg}</font>
-                            <span id="msgDiv"></span>
+
+                            <span id="msgDiv" style="color: red"></span>
                             <div class="form-group">
                                 <label class="sr-only" for="form-username">Username</label>
                                 <input type="text" name="adminName" placeholder="请输入用户名..."
