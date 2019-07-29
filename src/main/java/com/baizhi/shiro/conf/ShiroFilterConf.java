@@ -37,6 +37,8 @@ public class ShiroFilterConf {
         map.put("/admin/login","anon");
         //Shiro登陆请求放行
         map.put("/shiroAdmin/login","anon");
+        //首页可以访问
+        map.put("/index.jsp","anon");
         //拦截所有请求
         map.put("/**","authc");
         shiroFilterFactoryBean.setLoginUrl("/login/login.jsp");

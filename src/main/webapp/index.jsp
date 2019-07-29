@@ -47,9 +47,14 @@
 
 
             <ul class="nav navbar-nav navbar-right">
-                <%--<li><a>您好：${admin.adminName}</a></li>--%>
-                <li><a>您好：<font style="color: #9acfea"><shiro:principal></shiro:principal></font></a></li>
-                <li><a href="${app}/admin/exit">安全退出</a></li>
+            <%--<li><a>您好：${admin.adminName}</a></li>--%>
+                <shiro:authenticated>
+                    <li><a>您好：<font style="color: #9acfea"><shiro:principal></shiro:principal></font></a></li>
+                    <li><a href="${app}/admin/exit">安全退出</a></li>
+                </shiro:authenticated>
+                <shiro:notAuthenticated>
+                    <li><a><font style="color: #9acfea" href="${app}/shiroAdmin/logout"><shiro:principal></shiro:principal>登陆</font></a></li>
+                </shiro:notAuthenticated>
             </ul>
         </div>
     </div>

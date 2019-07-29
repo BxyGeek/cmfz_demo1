@@ -58,4 +58,12 @@ public class ShiroController extends BaseApiService {
             return setResultError("账号不存在");
         }
     }
+
+    @RequestMapping("logout")
+    @ResponseBody
+    public Map<String,Object> logout() {
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        return setResultSuccess();
+    }
 }
