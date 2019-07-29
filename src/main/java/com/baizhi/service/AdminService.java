@@ -22,5 +22,5 @@ public interface AdminService {
     Map<String,Object> login(Admin admin, HttpSession session,String enCode);
 
 
-    Admin queryAdminByUsername(String username);
+    Admin selectAdminByUsername(String username);
 }

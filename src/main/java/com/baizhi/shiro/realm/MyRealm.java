@@ -34,7 +34,7 @@ public class MyRealm extends AuthorizingRealm {
         String principal = (String) authenticationToken.getPrincipal();
 
         //通过主体获取数据库管理员对象
-        Admin admin = adminService.queryAdminByUsername(principal);
+        Admin admin = adminService.selectAdminByUsername(principal);
 
         //创建认证对象
         if(admin!=null){
@@ -57,7 +57,7 @@ public class MyRealm extends AuthorizingRealm {
         //拿到管理员主体
         String primaryPrincipal = (String) principalCollection.getPrimaryPrincipal();
         //通过主体获取数据库管理员对象
-        Admin admin = adminService.queryAdminByUsername(primaryPrincipal);
+        Admin admin = adminService.selectAdminByUsername(primaryPrincipal);
         //创建授权对象
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         //给角色对应的权限

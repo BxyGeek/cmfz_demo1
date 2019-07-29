@@ -60,7 +60,7 @@ public class AdminServiceImpl extends BaseApiService implements AdminService {
     }
 
     @Override
-    public Admin queryAdminByUsername(String username) {
+    public Admin selectAdminByUsername(String username) {
         Admin admin = new Admin();
         admin.setAdminName(username);
         Admin one = adminDAO.selectOne(admin);

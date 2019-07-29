@@ -36,9 +36,9 @@ public class AlbumServiceImpl extends BaseApiService implements AlbumService {
         RowBounds rowBounds = getRowBounds(page, size);
         Album album = new Album();
         List<Album> albums = albumDAO.selectByRowBounds(album, rowBounds);
-        System.out.println("albums");
+        System.out.println();
         Integer records = albumDAO.selectCount(album);
-        System.out.println("records");
+        System.out.println();
         Integer total = records/size==0?records/size:records/size+1;
         return setResultSuccessDataByPage(albums,page,total,records);
     }
