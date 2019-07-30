@@ -1,3 +1,4 @@
+/*
 package com.baizhi.aop;
 
 import com.alibaba.fastjson.JSONObject;
@@ -12,13 +13,15 @@ import redis.clients.jedis.Jedis;
 
 import java.lang.reflect.Method;
 
+*/
 /**
  * 类描述信息 (Redis缓存AOP编程切入点)
  *
  * @author : buxiaoyu
  * @date : 2019-07-29 17:40
  * @version: V_1.0.0
- */
+ *//*
+
 //声明这个类是一个配置类
 @Configuration
 @Aspect
@@ -50,9 +53,11 @@ public class RedisCache {
             StringBuilder builder = new StringBuilder();
             //获取类的全限定名
             String className = proceedingJoinPoint.getTarget().getClass().getName();
+            log.info("className:           "+className);
             builder.append(className).append(".");
             //获取方法名
             String methodName = method.getName();
+            log.info("methodName:          "+methodName);
             builder.append(methodName).append(":");
             //获取方法参数
             Object[] args = proceedingJoinPoint.getArgs();
@@ -63,12 +68,15 @@ public class RedisCache {
                     break;
                 }
                 builder.append(",");
+                log.info("arg:       "+arg.toString());
             }
             String key = builder.toString();
+            log.info("key:            "+key);
 
             //     3.1 如果缓存中有直接将结果返回
             if (jedis.exists(key)){
                 String s = jedis.get(key);
+                log.info("s:          "+s);
                 Object result = JSONObject.parse(s);
                 return result;
             }
@@ -97,3 +105,4 @@ public class RedisCache {
 
 
 }
+*/

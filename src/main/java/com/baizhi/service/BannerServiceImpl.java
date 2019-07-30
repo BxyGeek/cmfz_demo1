@@ -1,6 +1,5 @@
 package com.baizhi.service;
 
-import com.baizhi.annotation.RedisCache;
 import com.baizhi.api.BaseApiService;
 import com.baizhi.dao.BannerDAO;
 import com.baizhi.entity.Banner;
@@ -40,7 +39,7 @@ public class BannerServiceImpl extends BaseApiService implements BannerService {
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-    @RedisCache
+    //@RedisCache
     public Map<String, Object> queryAll(Integer page, Integer size) {
         RowBounds rowBounds = getRowBounds(page, size);
         Example example = new Example(Banner.class);

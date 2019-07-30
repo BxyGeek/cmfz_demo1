@@ -2,7 +2,6 @@ package com.baizhi.service;
 
 
 import com.baizhi.entity.Article;
-import com.baizhi.entity.Banner;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -60,7 +59,7 @@ public interface ArticleService {
     /**
      * 方法描述: (文件上传)
      * @param id
-     * @param cover
+     * @param imgFile
      * @param request
      * @return java.util.Map<java.lang.String, java.lang.Object>
      */

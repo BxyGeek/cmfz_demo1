@@ -1,6 +1,5 @@
 package com.baizhi.service;
 
-import com.baizhi.annotation.RedisCache;
 import com.baizhi.api.BaseApiService;
 import com.baizhi.dao.ArticleDAO;
 import com.baizhi.entity.Article;
@@ -37,7 +36,7 @@ public class ArticleServiceImpl extends BaseApiService implements ArticleService
     @Override
     @Transactional(propagation = Propagation.SUPPORTS,readOnly = true)
     //配置redis缓存
-    @RedisCache
+    //@RedisCache
     public Map<String, Object> queryAllArticles(Integer page, Integer size) {
         RowBounds rowBounds = getRowBounds(page, size);
         Article article = new Article();
