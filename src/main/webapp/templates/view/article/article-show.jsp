@@ -82,6 +82,13 @@
         },
         {
             //删除
+            afterComplete:function () {
+                alert()
+            }
+
+
+
+
         }
     );
     KindEditor.create('#editor_id', {

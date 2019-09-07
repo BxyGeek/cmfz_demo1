@@ -105,6 +105,13 @@
                         }
                     },{
                         //控制删除
+                        afterComplete:function () {
+                            $("#album_table").trigger("reloadGrid")
+                            alert()
+                        }
+
+
+
                     } );
             }
         }).navGrid("#album_pager", {edit : true,add : true,del : true})

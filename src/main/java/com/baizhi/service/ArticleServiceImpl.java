@@ -53,6 +53,10 @@ public class ArticleServiceImpl extends BaseApiService implements ArticleService
     public Map<String, Object> browser(HttpServletRequest request){
         //   /Library/local/IdeaProjects/cmfz/cmfz_demo1/src/main/webapp/image/picture/1.jpg
        //    /Library/local/IdeaProjects/cmfz/cmfz_demo1/src/main/webapp/statics/image
+
+        //设置相应类型
+
+
         String realPath = request.getSession().getServletContext().getRealPath("statics/image/picture/");
         // file.getName()              picture
         // file.getParent()            /Library/local/IdeaProjects/cmfz/cmfz_demo1/src/main/webapp/image

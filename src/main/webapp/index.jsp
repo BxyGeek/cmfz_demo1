@@ -26,14 +26,6 @@
     <script charset="utf-8" src="${app}/statics/kindeditor/kindeditor-all.js"></script>
     <script charset="utf-8" src="${app}/statics/kindeditor/lang/zh-CN.js"></script>
 
-    <script>
-
-        $(function(){
-
-        })
-
-
-    </script>
 </head>
 <body>
 <%--顶部--%>
